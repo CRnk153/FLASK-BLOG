@@ -1,0 +1,70 @@
+body,html{
+    height: 100%;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    overflow-y: hidden;
+
+}
+hr{
+    size: 2px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: Verdana;
+}
+header{
+    background-color:#25436E;
+    border-block: solid;
+    border-block-color: white;
+    writing-mode: horizontal-tb;
+    border-block-width: 1px;
+}
+main{
+    flex-grow: 1;
+}
+.container{
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.nav{
+    margin: 0 auto;
+    line-height: 2;
+}
+.nav-list{
+    display: table;
+    margin: 0 auto;
+
+}
+.nav-item{
+    float:left;
+    background-color: black;
+    border: 1px solid white;
+    text-align: center;
+
+}
+.nav-item a{
+    padding: 7px 15px;
+
+}
+.form-login{
+    border: 2px solid white;
+    text-align: center;
+    height:69vh;
+}
+.form-login h1{
+    font-size: 48px;
+    margin: 48px;
+}
+.form-login h1, label{
+    color: white;
+ }
+.form-login label{
+    font-size: 24px;
+
+}
+.form-login-rm-submit{
+    margin-top: 96px;
+}
+

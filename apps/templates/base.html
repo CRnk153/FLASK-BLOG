@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{title}} - Blog</title>
+    {% else %}
+        <title> My blog! </title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="logo">Logo</a></li>
+                    <li class="nav-item"><a href="/index">Home</a></li>
+                    <li class="nav-item"><a href="/login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <hr>
+
+    <main>
+        <div class="container">
+            {% block content %}
+
+            {% endblock %}
+
+            {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+            <ul>
+
+                {% for message in messages%}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
+        </div>
+    </main>
+
+    <hr>
+
+    <footer>
+        <div class="container">
+            <ul class="footer__list">
+                <li class="footer__list-item">Item 1</li>
+                <li class="footer__list-item">Item 2</li>
+                <li class="footer__list-item">Item 3</li>
+                <li class="footer__list-item">Item 4</li>
+            </ul>
+            <ul>
+                <li class="footer__list-item">Item 1</li>
+                <li class="footer__list-item">Item 2</li>
+                <li class="footer__list-item">Item 3</li>
+                <li class="footer__list-item">Item 4</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

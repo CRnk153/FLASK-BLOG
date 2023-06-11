@@ -1,0 +1,2 @@
+FLASK_DEBUG=0  **DEBUGGER OFF**
+FLASK_APP=##file.py## **MAIN.PY FILE FOR #flask run#**
