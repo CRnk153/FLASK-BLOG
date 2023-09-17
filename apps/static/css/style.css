@@ -1,12 +1,20 @@
 body,html{
     height: 100%;
     background-image: url('../images/background.jpg');
-    background-size: cover;
-    overflow-y: hidden;
-
+    background-size: 100%;
+    background-attachment: fixed;
 }
-hr{
+a{
+color:black;
+}
+.wrapper{
+    position: relative;
+    min-height: 100vh;
+}
+
+.hr{
     size: 2px;
+    background-color: black;
 }
 body{
     display: flex;
@@ -16,12 +24,13 @@ body{
 header{
     background-color:#25436E;
     border-block: solid;
-    border-block-color: white;
+    border-block-color: black;
     writing-mode: horizontal-tb;
     border-block-width: 1px;
 }
 main{
     flex-grow: 1;
+
 }
 .container{
     max-width: 60%;
@@ -30,6 +39,7 @@ main{
 
 .nav{
     margin: 0 auto;
+    color: black;
     line-height: 2;
 }
 .nav-list{
@@ -39,27 +49,28 @@ main{
 }
 .nav-item{
     float:left;
-    background-color: black;
-    border: 1px solid white;
+    background-color: white;
+    border: 1px solid black;
     text-align: center;
+    height: 33px;
+    width: 12vh;
 
 }
-.nav-item a{
-    padding: 7px 15px;
-
+.nav-item:hover{
+    background-color: rgb(169,169,169);
 }
 .form-login{
-    border: 2px solid white;
+
+    border: 2px solid black;
     text-align: center;
     height:69vh;
+    background-color: rgba(37,67,110, 0.3);
 }
 .form-login h1{
     font-size: 48px;
     margin: 48px;
 }
-.form-login h1, label{
-    color: white;
- }
+
 .form-login label{
     font-size: 24px;
 
@@ -67,4 +78,20 @@ main{
 .form-login-rm-submit{
     margin-top: 96px;
 }
+footer{
+  font-size: 12px;
+  background-color:#25436E;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  color: white;
+}
 
+.nav-list #logo img{
+    height:31px;
+    width:31px;
+}
+#alogo{
+    width: 31px;
+}

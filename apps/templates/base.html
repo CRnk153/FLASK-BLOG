@@ -11,58 +11,57 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#" class="logo">Logo</a></li>
-                    <li class="nav-item"><a href="/index">Home</a></li>
-                    <li class="nav-item"><a href="/login">Login</a></li>
-                </ul>
-            </nav>
+    <div class="wrapper">
+        <div class="container-wrapper">
+            <header>
+                <div class="container">
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li class="nav-item" id="alogo"><a href="{{url_for('index')}}" id="logo"><img src="..\static\images\icon.jpg" alt="Logo"></a></li>
+                            <li class="nav-item"><a href="{{url_for('index')}}">Home</a></li>
+                            <li class="nav-item"><a href="{{url_for('login')}}">Login</a></li>
+                            <li class="nav-item"><a href="{{url_for('registration')}}">sign in</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+        <hr class="hr">
+
+            <main>
+                <div class="container">
+                    {% block content %}
+
+                    {% endblock %}
+
+                    {% with messages = get_flashed_messages() %}
+
+                    {% if messages %}
+                    <ul>
+
+                        {% for message in messages%}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+
+                </div>
+            </main>
+
+        <hr class="hr">
+
+            <footer>
+                <div class="container">
+                    <ul class="footer__list">
+                        <li class="footer__list-item">Discord: CRnk153#6127</li>
+                        <li class="footer__list-item">Email for business: arthurhard2009@gmail.com</li>
+                        <li class="footer__list-item">©2023 Please do not steal any content </li>
+                        <li class="footer__list-item">Have a good day!</li>
+                    </ul>
+                </div>
+            </footer>
         </div>
-    </header>
-
-    <hr>
-
-    <main>
-        <div class="container">
-            {% block content %}
-
-            {% endblock %}
-
-            {% with messages = get_flashed_messages() %}
-
-            {% if messages %}
-            <ul>
-
-                {% for message in messages%}
-                <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endwith %}
-
-        </div>
-    </main>
-
-    <hr>
-
-    <footer>
-        <div class="container">
-            <ul class="footer__list">
-                <li class="footer__list-item">Item 1</li>
-                <li class="footer__list-item">Item 2</li>
-                <li class="footer__list-item">Item 3</li>
-                <li class="footer__list-item">Item 4</li>
-            </ul>
-            <ul>
-                <li class="footer__list-item">Item 1</li>
-                <li class="footer__list-item">Item 2</li>
-                <li class="footer__list-item">Item 3</li>
-                <li class="footer__list-item">Item 4</li>
-            </ul>
-        </div>
-    </footer>
+    </div>
 </body>
 </html>
